@@ -1,16 +1,19 @@
 from peewee import *
 from constants import DATABASE_HOST, DATABASE_NAME, DATABASE_PASSWORD, DATABASE_PORT, DATABASE_USER
 
-DB = MySQLDatabase(
-    DATABASE_NAME,
-    host=DATABASE_HOST,
-    port=DATABASE_PORT,
-    user=DATABASE_USER,
-    passwd=DATABASE_PASSWORD,
-    use_unicode=True,
-    charset='utf8'
-)
+# mysql connection
+# DB = MySQLDatabase(
+#     DATABASE_NAME,
+#     host=DATABASE_HOST,
+#     port=DATABASE_PORT,
+#     user=DATABASE_USER,
+#     passwd=DATABASE_PASSWORD,
+#     use_unicode=True,
+#     charset='utf8'
+# )
 
+# postgresql connection
+DB = PostgresqlDatabase(DATABASE_NAME, user=DATABASE_USER)
 
 class Notice(Model):
     notice = CharField(null=False)
